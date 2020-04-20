@@ -86,31 +86,31 @@ def get_related(movies_objects_list, ammount, message):
 			
 			related_movies_objects_list.append(related_movie_object)
 
-			pbar.update(1)
+			pbar.update()
 
 	return related_movies_objects_list
 
-def controller(movies_objects_list):
+def controller(movies_objects_list, related):
 
-	total_ammount = (len(movies_objects_list)*12)*12
+	ammount = len(movies_objects_list)*12
 	print("Total access points: "+str(len(movies_objects_list)))
-	print("Total Dataset Ammount: "+str(total_ammount))
-	print("Please remember: Runtime depends on website response speed, be patient")
+	print("Total Related Movies: "+str(ammount))
+	print("Please remember: Runtime depends on website response speed, be patient :)")
 	print("Starting the job...")
 
 	movies = []
 
-	ammount = len(movies_objects_list)*12
 	message = "1st Iteration -->"
 	related_movies = get_related(movies_objects_list, ammount, message)
 	movies.extend(related_movies)
 
-	new_ammount = len(movies)*12
-	second_message = "2nd Iteration -->"
-	more_related_movies = get_related(related_movies, new_ammount, second_message)
-	movies.extend(more_related_movies)
+	if related == True:
+		new_ammount = len(movies)*12
+		second_message = "2nd Iteration -->"
+		more_related_movies = get_related(related_movies, new_ammount, second_message)
+		movies.extend(more_related_movies)
 
-	print("Job done!")
-
+	tqdm._instances.pop().close() # This close all tqdm instances and prevent from re-print
+	
 	return movies
 

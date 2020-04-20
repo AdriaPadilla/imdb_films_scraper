@@ -2,7 +2,7 @@ import setuptools
 
 
 setuptools.setup(name='imdb_films_scraper',
-      version="1.0",
+      version="1.0.1",
       url = "https://github.com/AdriaPadilla/imdb_films_scraper/", 
       description='Scrape Film data from IMDB',
       author='Adrian Padilla',
