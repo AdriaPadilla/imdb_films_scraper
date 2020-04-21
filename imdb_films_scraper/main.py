@@ -15,7 +15,9 @@ def main(films, related):
 	related_movies = r.controller(movies, related)
 	movies_collection.extend(related_movies)
 
-	data = df.export(movies_collection)
+	all_data = df.export(movies_collection)
+
+	return all_data
 
 if __name__ == "__main__":
 	main(films, related)
