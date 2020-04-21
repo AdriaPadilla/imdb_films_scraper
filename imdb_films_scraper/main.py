@@ -1,6 +1,6 @@
-import films as f
-import related_films as r
-import dataframing as df
+from . import films as f
+from . import related_films as r
+from . import dataframing as df
 
 films = [""] #You Can place a single ID or a list of them
 related = False

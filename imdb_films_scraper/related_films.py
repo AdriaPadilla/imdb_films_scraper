@@ -1,9 +1,9 @@
 import requests
 from bs4 import  BeautifulSoup
-import movie_class as mv
-
 from tqdm import tqdm
 from time import sleep
+
+from . import movie_class as mv
 
 def get_related(movies_objects_list, ammount, message):
 

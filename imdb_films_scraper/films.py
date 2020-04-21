@@ -1,7 +1,7 @@
 import requests
 from bs4 import  BeautifulSoup
 
-import movie_class as mv
+from . import movie_class as mv
 
 movies_objects_list = []
 
